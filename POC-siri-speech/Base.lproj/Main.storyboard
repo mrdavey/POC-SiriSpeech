@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="POC_siri_speech" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vNu-Jj-mN5">
+                                <rect key="frame" x="16" y="28" width="343" height="290.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-gZ-BYM">
+                                <rect key="frame" x="133" y="318.5" width="108" height="30"/>
+                                <state key="normal" title="Start Recording"/>
+                                <connections>
+                                    <action selector="micButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQD-na-o5F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqf-kE-ZqC">
+                                <rect key="frame" x="203" y="443" width="30" height="30"/>
+                                <state key="normal" title="NL"/>
+                                <connections>
+                                    <action selector="dutchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ws4-Tb-0KL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wte-TA-JrU">
+                                <rect key="frame" x="133" y="443" width="30" height="30"/>
+                                <state key="normal" title="EN"/>
+                                <connections>
+                                    <action selector="englishButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ONU-LO-HQK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wte-TA-JrU" firstAttribute="leading" secondItem="jfM-gZ-BYM" secondAttribute="leading" id="1Wk-3U-5AL"/>
+                            <constraint firstItem="wte-TA-JrU" firstAttribute="top" secondItem="jfM-gZ-BYM" secondAttribute="bottom" constant="94.5" id="6Na-VK-6pw"/>
+                            <constraint firstItem="jfM-gZ-BYM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="B4c-gp-oXh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vNu-Jj-mN5" secondAttribute="trailing" id="EV0-iD-L0T"/>
+                            <constraint firstItem="Oqf-kE-ZqC" firstAttribute="centerY" secondItem="wte-TA-JrU" secondAttribute="centerY" id="Ihf-8O-VCZ"/>
+                            <constraint firstItem="jfM-gZ-BYM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JYo-ne-Pdh"/>
+                            <constraint firstItem="Oqf-kE-ZqC" firstAttribute="leading" secondItem="wte-TA-JrU" secondAttribute="trailing" constant="40" id="MTe-KI-ATF"/>
+                            <constraint firstItem="vNu-Jj-mN5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="XIz-bw-fRY"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="vNu-Jj-mN5" secondAttribute="leading" id="ccJ-bW-kLB"/>
+                            <constraint firstItem="jfM-gZ-BYM" firstAttribute="top" secondItem="vNu-Jj-mN5" secondAttribute="bottom" id="tI0-04-Wrb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dutchButton" destination="Oqf-kE-ZqC" id="dl2-IC-rsh"/>
+                        <outlet property="englishButton" destination="wte-TA-JrU" id="q8t-Ew-kvl"/>
+                        <outlet property="micButton" destination="jfM-gZ-BYM" id="By8-2Y-zaK"/>
+                        <outlet property="textView" destination="vNu-Jj-mN5" id="1OY-4h-use"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
